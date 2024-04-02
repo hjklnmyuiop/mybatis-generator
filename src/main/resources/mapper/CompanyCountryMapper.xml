@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ptx.mapper.CompanyCountryMapper">
+  <resultMap id="BaseResultMap" type="com.ptx.model.CompanyCountry">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="country_cn" jdbcType="VARCHAR" property="countryCn" />
+    <result column="country_en" jdbcType="VARCHAR" property="countryEn" />
+    <result column="time_zone" jdbcType="VARCHAR" property="timeZone" />
+    <result column="time_zone_logogram" jdbcType="VARCHAR" property="timeZoneLogogram" />
+    <result column="amazon_zone" jdbcType="VARCHAR" property="amazonZone" />
+    <result column="configuration_zone" jdbcType="VARCHAR" property="configurationZone" />
+    <result column="top_level_domain" jdbcType="VARCHAR" property="topLevelDomain" />
+    <result column="marketplace_name" jdbcType="VARCHAR" property="marketplaceName" />
+    <result column="marketplace_id" jdbcType="VARCHAR" property="marketplaceId" />
+    <result column="from_marketplace_id" jdbcType="VARCHAR" property="fromMarketplaceId" />
+    <result column="currency_symbol" jdbcType="VARCHAR" property="currencySymbol" />
+    <result column="currency_code" jdbcType="VARCHAR" property="currencyCode" />
+    <result column="currency" jdbcType="VARCHAR" property="currency" />
+    <result column="is_enable" jdbcType="TINYINT" property="isEnable" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from company_country
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ptx.model.CompanyCountry">
+    insert into company_country (id, country, country_cn, 
+      country_en, time_zone, time_zone_logogram, 
+      amazon_zone, configuration_zone, top_level_domain, 
+      marketplace_name, marketplace_id, from_marketplace_id, 
+      currency_symbol, currency_code, currency, 
+      is_enable, created_at, updated_at
+      )
+    values (#{id,jdbcType=INTEGER}, #{country,jdbcType=VARCHAR}, #{countryCn,jdbcType=VARCHAR}, 
+      #{countryEn,jdbcType=VARCHAR}, #{timeZone,jdbcType=VARCHAR}, #{timeZoneLogogram,jdbcType=VARCHAR}, 
+      #{amazonZone,jdbcType=VARCHAR}, #{configurationZone,jdbcType=VARCHAR}, #{topLevelDomain,jdbcType=VARCHAR}, 
+      #{marketplaceName,jdbcType=VARCHAR}, #{marketplaceId,jdbcType=VARCHAR}, #{fromMarketplaceId,jdbcType=VARCHAR}, 
+      #{currencySymbol,jdbcType=VARCHAR}, #{currencyCode,jdbcType=VARCHAR}, #{currency,jdbcType=VARCHAR}, 
+      #{isEnable,jdbcType=TINYINT}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ptx.model.CompanyCountry">
+    update company_country
+    set country = #{country,jdbcType=VARCHAR},
+      country_cn = #{countryCn,jdbcType=VARCHAR},
+      country_en = #{countryEn,jdbcType=VARCHAR},
+      time_zone = #{timeZone,jdbcType=VARCHAR},
+      time_zone_logogram = #{timeZoneLogogram,jdbcType=VARCHAR},
+      amazon_zone = #{amazonZone,jdbcType=VARCHAR},
+      configuration_zone = #{configurationZone,jdbcType=VARCHAR},
+      top_level_domain = #{topLevelDomain,jdbcType=VARCHAR},
+      marketplace_name = #{marketplaceName,jdbcType=VARCHAR},
+      marketplace_id = #{marketplaceId,jdbcType=VARCHAR},
+      from_marketplace_id = #{fromMarketplaceId,jdbcType=VARCHAR},
+      currency_symbol = #{currencySymbol,jdbcType=VARCHAR},
+      currency_code = #{currencyCode,jdbcType=VARCHAR},
+      currency = #{currency,jdbcType=VARCHAR},
+      is_enable = #{isEnable,jdbcType=TINYINT},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, country, country_cn, country_en, time_zone, time_zone_logogram, amazon_zone, 
+    configuration_zone, top_level_domain, marketplace_name, marketplace_id, from_marketplace_id, 
+    currency_symbol, currency_code, currency, is_enable, created_at, updated_at
+    from company_country
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, country, country_cn, country_en, time_zone, time_zone_logogram, amazon_zone, 
+    configuration_zone, top_level_domain, marketplace_name, marketplace_id, from_marketplace_id, 
+    currency_symbol, currency_code, currency, is_enable, created_at, updated_at
+    from company_country
+  </select>
+  <resultMap id="BaseResultMap" type="com.ptx.model.CompanyCountry">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="country_cn" jdbcType="VARCHAR" property="countryCn" />
+    <result column="country_en" jdbcType="VARCHAR" property="countryEn" />
+    <result column="time_zone" jdbcType="VARCHAR" property="timeZone" />
+    <result column="time_zone_logogram" jdbcType="VARCHAR" property="timeZoneLogogram" />
+    <result column="amazon_zone" jdbcType="VARCHAR" property="amazonZone" />
+    <result column="configuration_zone" jdbcType="VARCHAR" property="configurationZone" />
+    <result column="top_level_domain" jdbcType="VARCHAR" property="topLevelDomain" />
+    <result column="marketplace_name" jdbcType="VARCHAR" property="marketplaceName" />
+    <result column="marketplace_id" jdbcType="VARCHAR" property="marketplaceId" />
+    <result column="from_marketplace_id" jdbcType="VARCHAR" property="fromMarketplaceId" />
+    <result column="currency_symbol" jdbcType="VARCHAR" property="currencySymbol" />
+    <result column="currency_code" jdbcType="VARCHAR" property="currencyCode" />
+    <result column="currency" jdbcType="VARCHAR" property="currency" />
+    <result column="is_enable" jdbcType="TINYINT" property="isEnable" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from company_country
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ptx.model.CompanyCountry">
+    insert into company_country (id, country, country_cn, 
+      country_en, time_zone, time_zone_logogram, 
+      amazon_zone, configuration_zone, top_level_domain, 
+      marketplace_name, marketplace_id, from_marketplace_id, 
+      currency_symbol, currency_code, currency, 
+      is_enable, created_at, updated_at
+      )
+    values (#{id,jdbcType=INTEGER}, #{country,jdbcType=VARCHAR}, #{countryCn,jdbcType=VARCHAR}, 
+      #{countryEn,jdbcType=VARCHAR}, #{timeZone,jdbcType=VARCHAR}, #{timeZoneLogogram,jdbcType=VARCHAR}, 
+      #{amazonZone,jdbcType=VARCHAR}, #{configurationZone,jdbcType=VARCHAR}, #{topLevelDomain,jdbcType=VARCHAR}, 
+      #{marketplaceName,jdbcType=VARCHAR}, #{marketplaceId,jdbcType=VARCHAR}, #{fromMarketplaceId,jdbcType=VARCHAR}, 
+      #{currencySymbol,jdbcType=VARCHAR}, #{currencyCode,jdbcType=VARCHAR}, #{currency,jdbcType=VARCHAR}, 
+      #{isEnable,jdbcType=TINYINT}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ptx.model.CompanyCountry">
+    update company_country
+    set country = #{country,jdbcType=VARCHAR},
+      country_cn = #{countryCn,jdbcType=VARCHAR},
+      country_en = #{countryEn,jdbcType=VARCHAR},
+      time_zone = #{timeZone,jdbcType=VARCHAR},
+      time_zone_logogram = #{timeZoneLogogram,jdbcType=VARCHAR},
+      amazon_zone = #{amazonZone,jdbcType=VARCHAR},
+      configuration_zone = #{configurationZone,jdbcType=VARCHAR},
+      top_level_domain = #{topLevelDomain,jdbcType=VARCHAR},
+      marketplace_name = #{marketplaceName,jdbcType=VARCHAR},
+      marketplace_id = #{marketplaceId,jdbcType=VARCHAR},
+      from_marketplace_id = #{fromMarketplaceId,jdbcType=VARCHAR},
+      currency_symbol = #{currencySymbol,jdbcType=VARCHAR},
+      currency_code = #{currencyCode,jdbcType=VARCHAR},
+      currency = #{currency,jdbcType=VARCHAR},
+      is_enable = #{isEnable,jdbcType=TINYINT},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, country, country_cn, country_en, time_zone, time_zone_logogram, amazon_zone, 
+    configuration_zone, top_level_domain, marketplace_name, marketplace_id, from_marketplace_id, 
+    currency_symbol, currency_code, currency, is_enable, created_at, updated_at
+    from company_country
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, country, country_cn, country_en, time_zone, time_zone_logogram, amazon_zone, 
+    configuration_zone, top_level_domain, marketplace_name, marketplace_id, from_marketplace_id, 
+    currency_symbol, currency_code, currency, is_enable, created_at, updated_at
+    from company_country
+  </select>
+  <resultMap id="BaseResultMap" type="com.ptx.model.CompanyCountry">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="country_cn" jdbcType="VARCHAR" property="countryCn" />
+    <result column="country_en" jdbcType="VARCHAR" property="countryEn" />
+    <result column="time_zone" jdbcType="VARCHAR" property="timeZone" />
+    <result column="time_zone_logogram" jdbcType="VARCHAR" property="timeZoneLogogram" />
+    <result column="amazon_zone" jdbcType="VARCHAR" property="amazonZone" />
+    <result column="configuration_zone" jdbcType="VARCHAR" property="configurationZone" />
+    <result column="top_level_domain" jdbcType="VARCHAR" property="topLevelDomain" />
+    <result column="marketplace_name" jdbcType="VARCHAR" property="marketplaceName" />
+    <result column="marketplace_id" jdbcType="VARCHAR" property="marketplaceId" />
+    <result column="from_marketplace_id" jdbcType="VARCHAR" property="fromMarketplaceId" />
+    <result column="currency_symbol" jdbcType="VARCHAR" property="currencySymbol" />
+    <result column="currency_code" jdbcType="VARCHAR" property="currencyCode" />
+    <result column="currency" jdbcType="VARCHAR" property="currency" />
+    <result column="is_enable" jdbcType="TINYINT" property="isEnable" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from company_country
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ptx.model.CompanyCountry">
+    insert into company_country (id, country, country_cn, 
+      country_en, time_zone, time_zone_logogram, 
+      amazon_zone, configuration_zone, top_level_domain, 
+      marketplace_name, marketplace_id, from_marketplace_id, 
+      currency_symbol, currency_code, currency, 
+      is_enable, created_at, updated_at
+      )
+    values (#{id,jdbcType=INTEGER}, #{country,jdbcType=VARCHAR}, #{countryCn,jdbcType=VARCHAR}, 
+      #{countryEn,jdbcType=VARCHAR}, #{timeZone,jdbcType=VARCHAR}, #{timeZoneLogogram,jdbcType=VARCHAR}, 
+      #{amazonZone,jdbcType=VARCHAR}, #{configurationZone,jdbcType=VARCHAR}, #{topLevelDomain,jdbcType=VARCHAR}, 
+      #{marketplaceName,jdbcType=VARCHAR}, #{marketplaceId,jdbcType=VARCHAR}, #{fromMarketplaceId,jdbcType=VARCHAR}, 
+      #{currencySymbol,jdbcType=VARCHAR}, #{currencyCode,jdbcType=VARCHAR}, #{currency,jdbcType=VARCHAR}, 
+      #{isEnable,jdbcType=TINYINT}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ptx.model.CompanyCountry">
+    update company_country
+    set country = #{country,jdbcType=VARCHAR},
+      country_cn = #{countryCn,jdbcType=VARCHAR},
+      country_en = #{countryEn,jdbcType=VARCHAR},
+      time_zone = #{timeZone,jdbcType=VARCHAR},
+      time_zone_logogram = #{timeZoneLogogram,jdbcType=VARCHAR},
+      amazon_zone = #{amazonZone,jdbcType=VARCHAR},
+      configuration_zone = #{configurationZone,jdbcType=VARCHAR},
+      top_level_domain = #{topLevelDomain,jdbcType=VARCHAR},
+      marketplace_name = #{marketplaceName,jdbcType=VARCHAR},
+      marketplace_id = #{marketplaceId,jdbcType=VARCHAR},
+      from_marketplace_id = #{fromMarketplaceId,jdbcType=VARCHAR},
+      currency_symbol = #{currencySymbol,jdbcType=VARCHAR},
+      currency_code = #{currencyCode,jdbcType=VARCHAR},
+      currency = #{currency,jdbcType=VARCHAR},
+      is_enable = #{isEnable,jdbcType=TINYINT},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, country, country_cn, country_en, time_zone, time_zone_logogram, amazon_zone, 
+    configuration_zone, top_level_domain, marketplace_name, marketplace_id, from_marketplace_id, 
+    currency_symbol, currency_code, currency, is_enable, created_at, updated_at
+    from company_country
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, country, country_cn, country_en, time_zone, time_zone_logogram, amazon_zone, 
+    configuration_zone, top_level_domain, marketplace_name, marketplace_id, from_marketplace_id, 
+    currency_symbol, currency_code, currency, is_enable, created_at, updated_at
+    from company_country
+  </select>
+</mapper>
